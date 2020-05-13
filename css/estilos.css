@@ -1,0 +1,37 @@
+body {
+    background-image: url("https://unblast.com/wp-content/uploads/2018/08/Gradient-Mesh-2.jpg");
+    background-size: auto 100vh;
+    font-family: tahoma;
+    height: 100vh;
+  }
+  
+  .menu {
+    background-color: white;
+    ;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .menu ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .menu li {
+    list-style: none;
+  }
+  
+  .site-subtitle, .site-title {
+    color: whitesmoke;
+    text-align: center;
+  }
+  
+  .site-subtitle {
+    font-style: italic;
+  }
