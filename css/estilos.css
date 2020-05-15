@@ -1,37 +1,145 @@
+/* reset do css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background-image: url("https://unblast.com/wp-content/uploads/2018/08/Gradient-Mesh-2.jpg");
-    background-size: auto 100vh;
-    font-family: tahoma;
-    height: 100vh;
+  /* background-image: url("https://unblast.com/wp-content/uploads/2018/08/Gradient-Mesh-2.jpg"); */
+  background-image: url("https://i.pinimg.com/originals/0b/ac/47/0bac4734cc1c2fa4f98b4d2277130bd1.jpg");
+  background-repeat: no-repeat;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* se a tela tiver pelo menos 400px de largura vai carregar estes estilos */
+@media (min-width: 400px) {
+  body {
+    font-size: 14px;
   }
+}
+
+/* breakpoint */
+@media (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* breakpoint */
+@media (min-width: 1200px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* justify-content: e align-items: funcionam por conta do valor "flex" no display */
+}
+
+.menu {
+  background-color: white;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  /* a propriedade top só funciona quando há a propriedade position */
+}
   
-  .menu {
-    background-color: white;
-    ;
-  }
+a {
+  text-decoration: none;
+  color: pink;
+  font-family: 'Bebas Neue', cursive;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
   
-  a {
-    text-decoration: none;
-  }
+a:hover {
+  color: lightseagreen;
+}
   
-  a:hover {
-    text-decoration: underline;
-  }
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+}
   
-  .menu ul {
-    display: flex;
-    justify-content: space-around;
-  }
+.menu li {
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 20px;
+}
   
-  .menu li {
-    list-style: none;
+.site-subtitle, .site-title {
+  color: whitesmoke;
+  text-align: center;
+  text-shadow: 0 0px 10px #02020212;
+}
+
+.site-title {
+  font-size: 4em;
+  font-family: 'Vidaloka', serif;
+}
+
+.site-subtitle {
+  letter-spacing: 8px;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.contato, .portfolio {
+  padding: 1.5em;
+  height: 100vh;
+  background: white;
+}
+
+.contato h2, .portfolio h2 {
+  font-family: 'Bebas Neue', cursive;
+  color: pink;
+  padding: 1.5em;
+  font-size: 2em;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.portfolio .grid {
+  display: grid;
+  gap: 1.5em;
+  align-content: center;
+  justify-content: center;
+
+}
+
+@media (min-width: 560px) {
+  .portfolio .grid {
+    grid-template-columns: 240px 240px;
   }
-  
-  .site-subtitle, .site-title {
-    color: whitesmoke;
-    text-align: center;
+}
+
+@media (min-width: 880px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(3, 260px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 9.5em - 48px);
   }
-  
-  .site-subtitle {
-    font-style: italic;
-  }
+}
+
+.portfolio figure {
+  text-align: center;
+}
+
+.img-portfolio {
+  height: 180px;
+  width: 240px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
