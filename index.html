@@ -6,37 +6,73 @@
     <title>Ana Carolina Ferreira</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono&family=Roboto:wght@400;700&family=Vidaloka&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/0263f46564.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <!-- header = cabeçalho -->
     <header>
-    <nav class="menu">
-      <ul>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Portfólio</a></li>
-        <li><a href="#">Educação</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </nav>
-    <div>
-      <h1 class="site-title">Ana Carolina Ferreira</h1>
-      <h2 class="site-subtitle">IT Management Student</h2>
-    </div>
+      <nav class="menu">
+        <ul class="container">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#educacao">Educação</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="titulo">
+        <h1 class="site-title">Ana Carolina Ferreira</h1>
+        <h2 class="site-subtitle">IT Management Student</h2>
+      </div>
+    </header>
     
-  </header>
+  <section class="sobre container" id="sobre">
+    <h2>Sobre</h2>
+    <figure class="avatar">
+      <img src="https://avatars3.githubusercontent.com/u/65171063?s=460&u=31e21ccf28c43a6b0219f7b7aad90c7c34f536a1&v=4" alt="AnaCarolinaFerreira">
+    </figure>
+    
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia temporibus ducimus enim earum a nostrum id beatae quasi, sapiente perspiciatis hic, deserunt atque? Sequi deserunt earum aperiam ab quasi enim.
+      </p>
+    
+      <p>
+        Doloribus quo dolorum dolor corporis nemo molestias perspiciatis pariatur laboriosam ea fugit quis vel modi recusandae debitis fugiat ad temporibus, eos culpa atque corrupti illo! Tempore impedit fugiat laudantium quidem!
+      </p>
+    
+      <p>
+       Non blanditiis quaerat magnam excepturi. Suscipit deserunt nulla voluptatem vero ex ipsa illo ratione laborum explicabo dolor neque, rerum praesentium commodi quibusdam quaerat blanditiis, amet officia atque nesciunt eligendi. Veritatis!
+      </p>
 
-  <section class="portfolio">
+       <p>
+        Este site foi construído durante a <a href="https://alura.com.br/imersao-css">Imersão CSS da Alura</a> :]
+      </p>
+
+  </section>
+  <section class="portfolio container" id="portfolio">
     <h2>Portfólio</h2>
     <div class="grid">
-      <figure>
-        <img class="img-portfolio" src="./img/ecommerce-creditos-s-o-c-i-a-l-c-u-t-unsplash.jpg" alt="eCommerce">
-        <figcaption>eCommerce</figcaption>
-      </figure>
-      <figure>
-        <img class="img-portfolio" src="./img/mobile-creditos-nate-grant-unsplash.jpg" alt=">Mobile">
-        <figcaption>Mobile</figcaption>
-      </figure>
+
+      <div class="card">
+        <figure class="card-front">
+          <img class="img-portfolio" src="./img/ecommerce-creditos-s-o-c-i-a-l-c-u-t-unsplash.jpg" alt="eCommerce">
+          <figcaption>eCommerce</figcaption>
+        </figure>
+        <div class="card-back">
+          back
+        </div>
+      </div>
+
+      <div class="card">
+        <figure class="card-front">
+          <img class="img-portfolio" src="./img/mobile-creditos-nate-grant-unsplash.jpg" alt=">Mobile">
+          <figcaption>Mobile</figcaption>
+        </figure>
+        <div class="card-back">
+          back
+        </div>
+      </div>
+     
       <figure>
         <img class="img-portfolio" src="./img/webdesign-creditos-domenico-loia-unsplash.jpg" alt="Web design">
         <figcaption>Web design</figcaption>
@@ -51,22 +87,25 @@
       </figure>
     </div>
   </section>
-
-  <section class="contato">
+  <section class="contato container" id="contato">
     <h2>Contato</h2>
     <div class="grid icons">
       <a target="_blank" href="https://github.com/carolcfx">
-        Github
+        <i class="fab fa-github"></i>
       </a>
       <a target="_blank" href="https://twitter.com/carolabsolut">
-        twitter
+        <i class="fab fa-twitter"></i>
       </a>
       <a target="_blank" href="https://linkedin.com/in/carolcfx">
-        linkedin
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https:instagr.am/carolabsolut">
+        <i class="fab fa-instagram"></i>
       </a>
       <a href="mailto:ana.carolinacfx@gmail.com">
-        email
+        <i class="fas fa-envelope"></i>
       </a>
+
     </div>
   </section>
 

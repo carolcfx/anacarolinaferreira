@@ -6,26 +6,23 @@
 }
 
 body {
-  /* background-image: url("https://unblast.com/wp-content/uploads/2018/08/Gradient-Mesh-2.jpg"); */
-  background-image: url("https://i.pinimg.com/originals/0b/ac/47/0bac4734cc1c2fa4f98b4d2277130bd1.jpg");
-  background-repeat: no-repeat;
   display: block;
   font-family: 'Roboto', sans-serif;
   height: 100vh;
   width: 100vw;
 }
 
-/* se a tela tiver pelo menos 400px de largura vai carregar estes estilos */
-@media (min-width: 400px) {
+/* se a tela tiver pelo menos 300px de largura vai carregar estes estilos */
+@media (min-width: 300px) {
   body {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
 /* breakpoint */
 @media (min-width: 600px) {
   body {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -37,6 +34,10 @@ body {
 }
 
 header {
+  /* background-image: url("https://unblast.com/wp-content/uploads/2018/08/Gradient-Mesh-2.jpg"); */
+  background-image: url("https://i.pinimg.com/originals/0b/ac/47/0bac4734cc1c2fa4f98b4d2277130bd1.jpg");
+  background-repeat: no-repeat;
+  background-position-x: center;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -49,18 +50,17 @@ header {
   position: fixed;
   width: 100vw;
   top: 0;
+  z-index: 1;
   /* a propriedade top só funciona quando há a propriedade position */
 }
   
 a {
   text-decoration: none;
-  color: pink;
-  font-family: 'Bebas Neue', cursive;
-  text-transform: uppercase;
-  letter-spacing: 5px;
+  transition: color 0.7s;
+  color: hotpink; /* alterar a cor do hiperlink depois */
 }
   
-a:hover {
+a:hover, a:active, .menu a:hover {
   color: lightseagreen;
 }
   
@@ -76,8 +76,30 @@ a:hover {
 .menu a {
   display: block;
   padding: 10px 20px;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: pink;
 }
-  
+
+.titulo {
+  transform: translateY(60vh);
+  opacity: 0;
+  animation: linear 1s animacaoTitulo forwards;
+}
+
+/* ajustar depois */
+@keyframes animacaoTitulo {
+  from {
+    transform: translateY(60vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+}
+
 .site-subtitle, .site-title {
   color: whitesmoke;
   text-align: center;
@@ -94,19 +116,45 @@ a:hover {
   font-family: 'Bebas Neue', cursive;
 }
 
-.contato, .portfolio {
+.sobre, .contato, .portfolio {
   padding: 1.5em;
-  height: 100vh;
-  background: white;
+  min-height: 100vh;
+  background-color: white;
+
 }
 
-.contato h2, .portfolio h2 {
+@media (min-width: 1200px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+}
+
+.sobre h2, .contato h2, .portfolio h2 {
   font-family: 'Bebas Neue', cursive;
   color: pink;
   padding: 1.5em;
   font-size: 2em;
   text-align: center;
   letter-spacing: 5px;
+}
+
+.sobre p {
+  text-indent: 1.5em;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.sobre .avatar {
+  float: right;
+  margin-left: 2em;
+}
+
+.sobre .avatar img {
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
 }
 
 .portfolio .grid {
@@ -138,8 +186,52 @@ a:hover {
 
 .img-portfolio {
   height: 180px;
-  width: 240px;
+  width: 100%;
   object-fit: cover;
   border-radius: 5px;
+  /*transition: transform 0.5s;*/
 }
 
+/* .img-portfolio:hover {
+  transform: scale(1.05);
+} */
+
+.card {
+  background-color: red;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.card-back {
+  height: 180px;
+  width: 100%;
+  background-color: white;
+}
+
+.contato {
+  align-content: center;
+}
+
+.contato .icons {
+  text-align: center;
+}
+
+.contato a {
+  color: pink;
+  font-size: 3em;
+}
+
+.contato a:hover {
+  color: lightseagreen;
+}
