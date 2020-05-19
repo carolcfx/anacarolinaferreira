@@ -183,6 +183,7 @@ a:hover, a:active, .menu a:hover {
   gap: 1.5em;
   align-content: center;
   justify-content: center;
+  text-align: center;
 
 }
 
@@ -206,6 +207,10 @@ a:hover, a:active, .menu a:hover {
     justify-content: center;
     height: calc(100vh - 9.5em - 48px);
   }
+}
+
+.portfolio .grid a{
+  color: whitesmoke;
 }
 
 .portfolio figure {
@@ -267,7 +272,7 @@ a:hover, a:active, .menu a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255,255,255, .6);
+  background-color: rgb(0, 0, 0, .5);
   height: 180px;
   width: 100%;
   transform: rotateY(180deg);
@@ -295,6 +300,17 @@ a:hover, a:active, .menu a:hover {
   background-color: white;
 }
 >>>> fim do code antigo para analisar */
+
+.flip-card {
+  font-size: 0.6em;
+  color: whitesmoke;
+  transition: text-shadow 2.5s;
+}
+
+.flip-card:hover {
+  color: whitesmoke;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, .8);
+}
 
 .educacao {
   height: 100vh;
