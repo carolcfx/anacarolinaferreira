@@ -3,13 +3,31 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* personalizar a barra em geral */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* aqui é para personalizar o fundo da barra */
+::-webkit-scrollbar-track {
+  background:fff;
+}
+
+/* aqui é a alça da barra, que demonstra a altura que você está na página */
+::-webkit-scrollbar-thumb {
+  background: lightseagreen;
 }
 
 body {
   display: block;
   font-family: 'Roboto', sans-serif;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* se a tela tiver pelo menos 300px de largura vai carregar estes estilos */
@@ -37,18 +55,21 @@ header {
   /* background-image: url("https://unblast.com/wp-content/uploads/2018/08/Gradient-Mesh-2.jpg"); */
   background-image: url("https://i.pinimg.com/originals/0b/ac/47/0bac4734cc1c2fa4f98b4d2277130bd1.jpg");
   background-repeat: no-repeat;
-  background-position-x: center;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
   /* justify-content: e align-items: funcionam por conta do valor "flex" no display */
 }
 
 .menu {
   background-color: white;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   top: 0;
   z-index: 1;
   /* a propriedade top só funciona quando há a propriedade position */
@@ -83,7 +104,7 @@ a:hover, a:active, .menu a:hover {
 }
 
 .titulo {
-  transform: translateY(60vh);
+  transform: translateY(40vh);
   opacity: 0;
   animation: linear 1s animacaoTitulo forwards;
 }
@@ -91,7 +112,7 @@ a:hover, a:active, .menu a:hover {
 /* ajustar depois */
 @keyframes animacaoTitulo {
   from {
-    transform: translateY(60vh);
+    transform: translateY(40vh);
     opacity: 0;
   }
   to {
@@ -116,10 +137,11 @@ a:hover, a:active, .menu a:hover {
   font-family: 'Bebas Neue', cursive;
 }
 
-.sobre, .contato, .portfolio {
+.sobre, .contato, .projeto, .educacao {
   padding: 1.5em;
   min-height: 100vh;
   background-color: white;
+  overflow-x: hidden;
 
 }
 
@@ -131,10 +153,10 @@ a:hover, a:active, .menu a:hover {
   }
 }
 
-.sobre h2, .contato h2, .portfolio h2, .educacao h2 {
+.sobre h2, .contato h2, .projeto h2, .educacao h2 {
   font-family: 'Bebas Neue', cursive;
   color: pink;
-  padding: 1.5em;
+  padding: 2em;
   font-size: 2em;
   text-align: center;
   letter-spacing: 5px;
@@ -178,30 +200,46 @@ a:hover, a:active, .menu a:hover {
   width: 300px;
 }
 
-.portfolio .grid {
+@media (max-width: 400px) {
+  .sobre .avatar img {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media (max-width: 300px) {
+  .projeto {
+    height: none;
+  }
+}
+
+.projeto .grid {
   display: grid;
   gap: 1.5em;
   align-content: center;
   justify-content: center;
   text-align: center;
-
+  color: whitesmoke;
 }
 
 @media (min-width: 300px) {
-  .portfolio .grid {
+  .projeto .grid {
     gap: 2em;
+    grid-template-rows: 200px 200px;
     font-size: 1.7em;
+    padding: 2em;
   }
 }
 
 @media (min-width: 560px) {
-  .portfolio .grid {
+  .projeto .grid {
     grid-template-columns: 240px 240px;
+    grid-auto-rows: 200px;
   }
 }
 
 @media (min-width: 880px) {
-  .portfolio .grid {
+  .projeto .grid {
     grid-template-columns: repeat(3, 260px);
     align-content: center;
     justify-content: center;
@@ -209,21 +247,18 @@ a:hover, a:active, .menu a:hover {
   }
 }
 
-.portfolio .grid a{
-  color: whitesmoke;
-}
-
-.portfolio figure {
+.projeto figure {
   text-align: center;
+  color: black;
 }
 
 @media (min-width: 800px) {
-  .portfolio figure {
+  .projeto figure {
     font-size: 0;
   }
 }
 
-.img-portfolio {
+.img-projeto {
   height: 180px;
   width: 100%;
   object-fit: cover;
@@ -231,19 +266,19 @@ a:hover, a:active, .menu a:hover {
   /*transition: transform 0.5s;*/
 }
 
-/* .img-portfolio:hover {
+/* .img-projeto:hover {
   transform: scale(1.05);
 } */
 
 
-#portfolio {
+#projeto {
   font-family: 'Bebas Neue', 'cursive';
 }
 
-.flip-card {
-  height: 180px;
+.projeto {
+  min-height: 100vh;
   perspective: 1000px;
-}
+} 
 
 .flip-card:hover .card {
   transform: rotateY(180deg);
@@ -277,6 +312,7 @@ a:hover, a:active, .menu a:hover {
   width: 100%;
   transform: rotateY(180deg);
 }
+
 /*fim do teste*/
 
 /*  >>>> code antigo para analisar
@@ -301,6 +337,15 @@ a:hover, a:active, .menu a:hover {
 }
 >>>> fim do code antigo para analisar */
 
+/*@keyframes animacaoFlipCardHover {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}*/
+
 .flip-card {
   font-size: 0.6em;
   color: whitesmoke;
@@ -312,8 +357,8 @@ a:hover, a:active, .menu a:hover {
   text-shadow: 0px 0px 10px rgba(255, 255, 255, .8);
 }
 
-.educacao {
-  height: 100vh;
+.flip-card figcaption {
+  backface-visibility: hidden;
 }
 
 .contato {
@@ -322,11 +367,15 @@ a:hover, a:active, .menu a:hover {
 
 .contato .icons {
   text-align: center;
+  padding: 1.1em;
+  font-size: 6em;
+  justify-content: center;
+  align-items: center;
 }
 
 .contato a {
   color: pink;
-  font-size: 3em;
+
 }
 
 .contato a:hover {
